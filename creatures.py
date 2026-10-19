@@ -3,6 +3,9 @@ import math
 import random
 import tkinter as tk
 
+use_set_seed = False # set to True to use a set seed
+set_seed = 0xf47c9d23 # if use_set_seed True, set your seed here 
+
 SCALE = 3.5 
 PAD = 20 
 BG, INK, MUTE = "#e8e6f0", "#2a2640", "#6f6a8c"
@@ -10,7 +13,6 @@ SYLLABLES = "ba bo bu di fi ga ju ka k o nu pa po ri sko tu wib zo zu ple nok fe
 
 
 def color(hue, sat, light):
-
     r, g, b = colorsys.hls_to_rgb(hue % 360 / 360, light / 100, sat / 100)
     return "#%02x%02x%02x" % (round(r * 255), round(g * 255), round(b * 255))
 
@@ -25,7 +27,6 @@ def curve(p0, p1, p2, steps=8):
 
 
 def blob(r, cx, cy, rx, ry, n):
-
     pts = []
     for i in range(n):
         a = i / n * 2 * math.pi
@@ -140,14 +141,17 @@ def main():
                        bg=BG, highlightthickness=0, cursor="hand2")
 
     def reroll(event=None):
-        seed = random.randrange(2 ** 32)
+        if use_set_seed:
+            seed = set_seed
+        else:
+            seed = random.randrange(2 ** 32)
+            
         shapes, name = creature(seed)
         canvas.delete("all")
         paint(canvas, shapes, PAD, PAD)
         canvas.create_text(PAD + size / 2, PAD + size + 20, text=name, fill=INK, font=("Segoe UI", 16, "bold"))
         canvas.create_text(PAD + size / 2, PAD + size + 44, text="#%x" % seed, fill=MUTE, font=("Segoe UI", 10))
 
-    tk.Button()
     canvas.pack()
     canvas.bind("<Button-1>", reroll)
     reroll()
