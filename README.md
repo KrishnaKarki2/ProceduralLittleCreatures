@@ -34,13 +34,14 @@ python creatures.py
 
 Adjust the variables to your taste 
 
-https://github.com/KrishnaKarki2/ProceduralLittleCreatures/blob/d82c15f672c74961123750b1cf5f54cc6b97626b/creatures.py#L9-L12
+https://github.com/KrishnaKarki2/ProceduralLittleCreatures/blob/0fd51349910bd795733cd5ae1d52f631d3d2d56d/creatures.py#L9-L12
 
 <br> 
 
 #### Custom seeds
 Each creature comes with a unique seed; a little creature never gets lost as long as you have its seed ;)
-https://github.com/KrishnaKarki2/ProceduralLittleCreatures/blob/d82c15f672c74961123750b1cf5f54cc6b97626b/creatures.py#L6-L7 
+
+https://github.com/KrishnaKarki2/ProceduralLittleCreatures/blob/0fd51349910bd795733cd5ae1d52f631d3d2d56d/creatures.py#L6-L7
 
 <br> 
 
