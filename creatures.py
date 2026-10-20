@@ -4,7 +4,7 @@ import random
 import tkinter as tk
 
 use_set_seed = False # set to True to use a set seed
-set_seed = 0xf47c9d23 # if use_set_seed True, set your seed here 
+set_seed = 0xf47c9d23 # if use_set_seed True, set your seed here; keep the "0x" 
 
 SCALE = 3.5 
 PAD = 20 
